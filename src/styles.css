@@ -1,0 +1,334 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+@custom-variant dark (&:where(.dark, .dark *, .sepia, .sepia *));
+
+@layer base {
+  :root {
+    --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-serif: "Source Serif 4", Georgia, serif;
+    --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+    --reading-scale: 1;
+    --page-bg: #f4f6f8;
+    --card-bg: #ffffff;
+    --card-border: #e2e8f0;
+    --text-color: #0f172a;
+    color-scheme: light;
+  }
+
+  html[data-font-scale="sm"] {
+    --reading-scale: 0.94;
+  }
+
+  html[data-font-scale="md"] {
+    --reading-scale: 1;
+  }
+
+  html[data-font-scale="lg"] {
+    --reading-scale: 1.12;
+  }
+
+  html.dark,
+  html.sepia {
+    color-scheme: dark;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    background-color: var(--page-bg);
+    color: var(--text-color);
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+  }
+}
+
+/* 1. CINZA (Matte E-Ink Neutral Gray — zero glare, deep black ink) */
+html.gray {
+  color-scheme: light;
+  --page-bg: #dbe0e7;
+  --card-bg: #ecf0f5;
+  --card-border: #bcc5d0;
+  --text-color: #0a0e14;
+  color: #090b0e;
+  --color-white: #ecf0f5;
+  --color-slate-50: #dbe0e7;
+  --color-slate-100: #d0d6df;
+  --color-slate-200: #bcc5d0;
+  --color-slate-300: #9da7b6;
+  --color-slate-400: #4c5563;
+  --color-slate-500: #2f3640;
+  --color-slate-600: #1e232b;
+  --color-slate-700: #13171d;
+  --color-slate-800: #1b2430;
+  --color-slate-900: #0f141c;
+  --color-slate-950: #05070a;
+
+  /* Muted closed-amber / slate-ochre accent harmony */
+  --color-sky-50: #e3decb;
+  --color-sky-100: #d8ceb0;
+  --color-sky-200: #c2b07e;
+  --color-sky-400: #8c6618;
+  --color-sky-500: #765512;
+  --color-sky-600: #61450d;
+  --color-sky-700: #4f3709;
+  --color-sky-800: #3d2a06;
+  --color-sky-900: #261903;
+  --color-sky-950: #170f01;
+
+  --color-emerald-50: #d9ebe2;
+  --color-rose-50: #eedadd;
+  --color-amber-50: #e5dcb8;
+}
+
+/* 2. AMARELO FECHADO / OCRE (Closed Muted Yellow / Warm Ochre Paper — earthy closed yellow tones & pure black ink) */
+html.ochre {
+  color-scheme: light;
+  color: #000000;
+  --color-white: #ece0ba;
+  --color-slate-50: #dfd0a2;
+  --color-slate-100: #d3c18d;
+  --color-slate-200: #bfb07a;
+  --color-slate-300: #a6955e;
+  --color-slate-400: #4f4424;
+  --color-slate-500: #302812;
+  --color-slate-600: #1f190a;
+  --color-slate-700: #120e05;
+  --color-slate-800: #080602;
+  --color-slate-900: #000000;
+  --color-slate-950: #000000;
+
+  /* Deep closed mustard-ochre accents */
+  --color-sky-50: #e2cfa0;
+  --color-sky-100: #d6bd82;
+  --color-sky-200: #c2a159;
+  --color-sky-400: #875d0e;
+  --color-sky-500: #734e0a;
+  --color-sky-600: #5e3f07;
+  --color-sky-700: #4c3205;
+  --color-sky-800: #3b2603;
+  --color-sky-900: #241601;
+  --color-sky-950: #140c00;
+
+  --color-emerald-50: #d3e4cd;
+  --color-rose-50: #e8cfc9;
+  --color-amber-50: #dfca8c;
+  --color-amber-200: #b89844;
+  --color-amber-300: #9e7e2c;
+}
+
+/* 3. SÉPIA (Dark Sepia / Deep Espresso & Closed Old-Gold Tones) */
+html.sepia {
+  color-scheme: dark;
+  --page-bg: #1c140d;
+  --card-bg: #291e14;
+  --card-border: #443222;
+  --text-color: #f7eedb;
+  color: #f7eedb;
+  --color-slate-950: #16110b;
+  --color-slate-900: #291e14;
+  --color-slate-800: #3a2b1d;
+  --color-slate-700: #543f2c;
+  --color-slate-600: #7a5f44;
+  --color-slate-500: #a88a6d;
+  --color-slate-400: #c9b195;
+  --color-slate-300: #e0d0bd;
+  --color-slate-200: #eee3d4;
+  --color-slate-100: #f7eedb;
+  --color-slate-50: #fbf7ef;
+
+  /* Closed dark-yellow / antique ochre accents inside Dark Sepia */
+  --color-sky-950: #33240d;
+  --color-sky-900: #473212;
+  --color-sky-800: #664819;
+  --color-sky-700: #825c1f;
+  --color-sky-600: #9e7126;
+  --color-sky-500: #b88632;
+  --color-sky-400: #cea04c;
+  --color-sky-300: #dfc07c;
+  --color-sky-200: #ecd8a8;
+}
+
+/* 4. ESCURO (Deep Nocturnal Slate with subtle closed-gold option highlights) */
+html.dark {
+  color-scheme: dark;
+  --page-bg: #0b1320;
+  --card-bg: #152238;
+  --card-border: #233550;
+  --text-color: #f1f5f9;
+  color: #f1f5f9;
+  --color-slate-950: #0b1320;
+  --color-slate-900: #152238;
+  --color-slate-800: #1e2f4a;
+  --color-slate-700: #2f4464;
+  --color-slate-600: #476185;
+  --color-slate-500: #6983a7;
+  --color-slate-400: #96a9c4;
+  --color-slate-300: #cbd5e1;
+  --color-slate-200: #e2e8f0;
+  --color-slate-100: #f1f5f9;
+  --color-slate-50: #f8fafc;
+  --color-sky-400: #38bdf8;
+  --color-sky-500: #0ea5e9;
+  --color-sky-600: #0284c7;
+  --color-sky-700: #0369a1;
+  --color-sky-800: #075985;
+  --color-sky-950: #082f49;
+  --color-sky-200: #bae6fd;
+}
+
+/* Also harmonize Claro primary accents with refined closed-ochre / warm institutional bronze-amber where amber is used */
+html:not(.dark):not(.sepia):not(.gray):not(.ochre) {
+  --color-amber-50: #f5edd6;
+  --color-amber-200: #d4b972;
+  --color-amber-300: #b89642;
+  --color-amber-800: #5c4309;
+  --color-amber-900: #422f05;
+}
+
+.font-editorial {
+  font-family: var(--font-serif);
+}
+
+.font-mono-tabular {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.reading-scale-stem {
+  font-size: calc(16px * var(--reading-scale));
+}
+
+.reading-scale-support {
+  font-size: calc(15.5px * var(--reading-scale));
+}
+
+.reading-scale-option {
+  font-size: calc(15px * var(--reading-scale));
+}
+
+.reading-scale-mono-option {
+  font-size: calc(13.5px * var(--reading-scale));
+}
+
+.reading-scale-explanation {
+  font-size: calc(14.5px * var(--reading-scale));
+}
+
+/* ==========================================================================
+   Padrão ABNT (NBR 14724): Alinhamento Justificado e Rigor Tipográfico
+   - Texto justificado equilibrado (text-align: justify; text-justify: inter-word;)
+   - Última linha sempre alinhada à esquerda (text-align-last: left)
+   - Espaçamento entrelinhas canônico de 1.5x (line-height: 1.55)
+   - Alinhamento rigoroso de letras identificadoras (A, B, C, D)
+   ========================================================================== */
+.abnt-justified,
+.reading-scale-stem,
+.reading-scale-stem p,
+.reading-scale-support,
+.reading-scale-explanation,
+.reading-scale-explanation p,
+.reading-scale-explanation li,
+.reading-scale-option,
+.reading-scale-mono-option {
+  text-align: justify;
+  text-justify: inter-word;
+  text-align-last: left;
+  -webkit-text-align-last: left;
+  line-height: 1.55;
+  hyphens: none;
+  -webkit-hyphens: none;
+  word-break: normal;
+  overflow-wrap: break-word;
+  text-rendering: optimizeLegibility;
+}
+
+.reading-scale-stem {
+  margin-bottom: 1.25rem;
+}
+
+.reading-scale-support {
+  line-height: 1.6;
+}
+
+/* No Modo Celular: alinhamento justificado canônico da ABNT com alinhamento perfeito de letras */
+html[data-view-mode="mobile"] .abnt-justified,
+html[data-view-mode="mobile"] .reading-scale-stem,
+html[data-view-mode="mobile"] .reading-scale-stem p,
+html[data-view-mode="mobile"] .reading-scale-support,
+html[data-view-mode="mobile"] .reading-scale-explanation,
+html[data-view-mode="mobile"] .reading-scale-explanation p,
+html[data-view-mode="mobile"] .reading-scale-explanation li,
+html[data-view-mode="mobile"] .reading-scale-option,
+html[data-view-mode="mobile"] .reading-scale-mono-option {
+  text-align: justify !important;
+  text-justify: inter-word !important;
+  text-align-last: left !important;
+  -webkit-text-align-last: left !important;
+  line-height: 1.55 !important;
+  hyphens: none !important;
+  -webkit-hyphens: none !important;
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
+}
+
+/* Alinhamento geométrico perfeito das letras identificadoras (A, B, C, D) */
+.option-letter-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: 700;
+  line-height: 1;
+  flex-shrink: 0;
+  aspect-ratio: 1 / 1;
+}
+
+html[data-view-mode="mobile"] article {
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+}
+
+.swatch-light {
+  background-color: #ffffff;
+  border-color: #cbd5e1;
+}
+
+.swatch-gray {
+  background-color: #cdd4de;
+  border-color: #8b96a6;
+}
+
+.swatch-ochre {
+  background-color: #c8ab65;
+  border-color: #7d5c16;
+}
+
+.swatch-sepia {
+  background-color: #291e14;
+  border-color: #8c6422;
+}
+
+.swatch-dark {
+  background-color: #0f172a;
+  border-color: #475569;
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+  }
+}

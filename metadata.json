@@ -1,0 +1,6 @@
+{
+  "name": "Simulado SEDUC-CE 2026",
+  "description": "Caderno de 1.000 questões comentadas e simulados interativos para o concurso SEDUC-CE 2026 padrão FUNECE.",
+  "permissions": [],
+  "capabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
